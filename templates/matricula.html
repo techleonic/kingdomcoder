@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="container mt-5 fw-bold">
+    <div class="card">
+        <div class="card-header text-primary">
+            Información Importante
+        </div>
+        <div class="card-body text-primary">
+            <blockquote class="blockquote mb-0">
+                <p>Usted se está inscribiendo a una lista de espera ya que contamos con recursos limitados.</p>
+                <footer class="blockquote-footer">Jose Leonidas <cite title="Source Title">Kingdom Coder</cite></footer>
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+<form class="container mt-5" action="{{ url_for('matricula') }}" method="POST">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre Completo</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required>
+    </div>
+    <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+    </div>
+    <div class="mb-3">
+        <label for="direccion" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="direccion" name="direccion" required>
+    </div>
+    <div class="mb-3">
+        <label for="carrera" class="form-label">Seleccionar Carrera</label>
+        <select class="form-select" id="carrera" name="carrera" required>
+            <option value="ingles_computacion">Inglés y Computación</option>
+            <option value="solo_ingles">Solo Inglés</option>
+            <option value="solo_computacion">Solo Computación</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Disponibilidad</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="disponibilidad" id="Miércoles3" value="Miércoles 3:00" required>
+            <label class="form-check-label" for="Miércoles3">Miércoles 3:00pm (Nivel Básico niños)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="disponibilidad" id="Miércoles" value="Miércoles 6:00" required>
+            <label class="form-check-label" for="Miércoles">Miércoles 6:00pm (Nivel Avanzado - Programación Lenguaje Python)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="disponibilidad" id="Viernes" value="Sabado 3:00" required>
+            <label class="form-check-label" for="Viernes">Sàbado 3:00pm Ofimàtica (word, Excel, PowerPoint)</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Matricular</button>
+</form>
+
+
+<div class="container-fluid mb-3 mt-2">
+    <h1>Lista de espera</h1>
+    <ol class="list-group list-group-numbered">
+    {% for li in wlist %}
+      <li class="list-group-item">{{ li[0] }}</li>
+    {% endfor %}
+    </ol>
+</div>
+
+
+<h1 class="mt-2">Lista de matriculados <span class="badge bg-secondary">Programació con Python Miércoles 6:00pm </span> </h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Disponibilidad</th>
+            <th>Clases</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% coding = [item for item in rows if item[4] in ["Miercoles 6:00pm","Miercoles 6:00"] ]
+        {% for row in coding %}
+        <tr>
+            <th scope="row">{{ loop.index }}</th>
+            <td class="name-column">{{ row[0] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock content %}

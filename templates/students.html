@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h1>Grades for Eglish Proyect<span class="badge badge-secondary">Frist Evaluation Cycle</span></h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      {% for head in heads%}
+      <th>{{ head }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in rows %}
+    <tr>
+      <th scope="row">{{ rows.index(row)+1 }}</th>
+      <td class="name-column">{{ row[0] }}</td>
+      <td>{{ row[1] }}</td>
+      <td>{{ row[2] }}</td>
+      <td>{{ row[3] }}</td>
+      <td>{{ row[4] }}</td>
+      <td>{{ row[5] }}</td>
+      <td>{{ row[6] }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}

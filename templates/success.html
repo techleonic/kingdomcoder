@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container text-center mt-5">
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">¡Registro Exitoso!</h4>
+        <p>Tu matrícula ha sido procesada correctamente.</p>
+        <hr>
+        <p class="mb-0">Gracias por registrarte en nuestro programa educativo.</p>
+    </div>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Volver a la Página Principal</a>
+</div>
+{% endblock content %}

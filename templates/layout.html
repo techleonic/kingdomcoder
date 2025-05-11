@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Program</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+        font-family: 'Nexa';
+        src: url('static/Nexa-Heavy.ttf');
+        }
+        @font-face {
+        font-family: 'Nexa_l';
+        src: url('static/Nexa-ExtraLight.ttf');
+        }
+        :root {
+            --primary-color: #23475f;
+            --secondary-color: #949cac;
+            --background-color: #ffffff;
+            --highlight-color: #f0bd37;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            font-family: Nexa_l;
+        }
+
+        .hero {
+            /*https://via.placeholder.com/1920x600*/
+            background-image: url('static/images/kc_bluebg.png'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            /*var(--background-color)*/
+            color:var(--background-color) ;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .search-bar {
+            margin-top: -50px;
+        }
+
+        .course-card {
+            border: 1px solid var(--secondary-color);
+        }
+
+        .course-card:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+       .navbar{
+            font-family: Nexa;
+        }
+        h1{
+            font-family: Nexa;
+        }
+        .btn{
+            font-family: Nexa;
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+        width: 5%; /* Adjust width for smaller screens */
+        }
+
+        .name-column {
+        font-weight: bold;
+        }
+
+        .form-label {
+        font-weight: bold;
+        color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand text-white" href="{{ url_for('index') }}">Kingdom
+                Coder
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ url_for('students_grades') }}">Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ url_for('matricula') }}">Matricula</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Professor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Help Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+
+
+<!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
