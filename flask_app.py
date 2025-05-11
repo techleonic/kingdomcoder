@@ -33,14 +33,14 @@ def matricula():
         print(name, phone, address, studies, day)
         return render_template("success.html")
 
-    with open('kingdom_coder/static/matriculas.csv', mode='r') as file:
+    with open('static/matriculas.csv', mode='r') as file: #put kingdom_coder
         csvfile = csv.reader(file)
         headers = next(csvfile)
         content = []
         for rows in csvfile:
             content.append(rows)
 
-    with open('kingdom_coder/static/waiting.csv', mode='r') as wfile:
+    with open('static/waiting.csv', mode='r') as wfile: #put kingdom_coder
         csvwfile = csv.reader(wfile)
         _ = next(csvwfile)
         waiting = []
@@ -48,3 +48,6 @@ def matricula():
             waiting.append(li)
 
     return render_template('matricula.html', heads=headers, rows =content, wlist=waiting  )
+
+if __name__ == "__main__": #take this out when publishing please 
+    app.run(debug=True)

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+<!--
 <div class="container mt-5 fw-bold">
     <div class="card">
         <div class="card-header text-primary">
@@ -16,7 +16,7 @@
         </div>
     </div>
 </div>
-
+-->
 <form class="container mt-5" action="{{ url_for('matricula') }}" method="POST">
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre Completo</label>
@@ -41,16 +41,20 @@
     <div class="mb-3">
         <label class="form-label">Disponibilidad</label>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="disponibilidad" id="Miércoles3" value="Miércoles 3:00" required>
+            <input class="form-check-input" type="radio" name="disponibilidad" id="Miércoles3" value="miércoles 3:00" required>
             <label class="form-check-label" for="Miércoles3">Miércoles 3:00pm (Nivel Básico niños)</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="disponibilidad" id="Miércoles" value="Miércoles 6:00" required>
+            <input class="form-check-input" type="radio" name="disponibilidad" id="Miércoles" value="miércoles 6:00" required>
             <label class="form-check-label" for="Miércoles">Miércoles 6:00pm (Nivel Avanzado - Programación Lenguaje Python)</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="disponibilidad" id="Viernes" value="Sabado 3:00" required>
+            <input class="form-check-input" type="radio" name="disponibilidad" id="sabado" value="sábado 3:00" required>
             <label class="form-check-label" for="Viernes">Sàbado 3:00pm Ofimàtica (word, Excel, PowerPoint)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="disponibilidad" id="Domingo" value="domingo 5:00" required>
+            <label class="form-check-label" for="Viernes">Domingo 5:00pm Inglés</label>
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Matricular</button>
@@ -65,32 +69,109 @@
     {% endfor %}
     </ol>
 </div>
+<!--Miercoles 6:00 Programacion-->
+<div class="container-fluid mb-3 mt-2"></div>
+    <h1 class="mt-2">Lista de matriculados <span class="badge bg-secondary">Programació con Python Miércoles 6:00pm </span> </h1>
 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Disponibilidad</th>
+                <th>Clases</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                {% if row[4] in ["Miércoles 6:00", "Miercoles 6:00", "miercoles 6:00", "miércoles 6:00"] %}
+                    <th scope="row">{{ loop.index }}</th>
+                    <td class="name-column">{{ row[0] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[3] }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
-<h1 class="mt-2">Lista de matriculados <span class="badge bg-secondary">Programació con Python Miércoles 6:00pm </span> </h1>
+<!--Miercoles 3:00 niños-->
+<div class="container-fluid mb-3 mt-2"></div>
+    <h1 class="mt-2">Lista de matriculados <span class="badge bg-secondary">Computación desde cero Miércoles 3:00pm (niños) </span> </h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Disponibilidad</th>
-            <th>Clases</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% coding = [item for item in rows if item[4] in ["Miercoles 6:00pm","Miercoles 6:00"] ]
-        {% for row in coding %}
-        <tr>
-            <th scope="row">{{ loop.index }}</th>
-            <td class="name-column">{{ row[0] }}</td>
-            <td>{{ row[4] }}</td>
-            <td>{{ row[3] }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Disponibilidad</th>
+                <th>Clases</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                {% if row[4] in ["Miércoles 3:00", "Miercoles 3:00", "miercoles 3:00", "miércoles 3:00"] %}
+                    <td class="name-column">{{ row[0] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[3] }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
+<!--Viernes ofimatica-->
+<div class="container-fluid mb-3 mt-2"></div>
+    <h1 class="mt-2">Lista de matriculados <span class="badge bg-secondary">Viernes 5:00 (Ofimàtica word, excel, PowerPoint) </span> </h1>
 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Disponibilidad</th>
+                <th>Clases</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                {% if row[4] in ["Viernes 5:00", "viernes 5:00"] %}
+                    <td class="name-column">{{ row[0] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[3] }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
+<!--sabado ofimatica-->
+<div class="container-fluid mb-3 mt-2"></div>
+    <h1 class="mt-2">Lista de matriculados <span class="badge bg-secondary">Sábado 3:00 (Ofimàtica word, excel, PowerPoint) </span> </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Disponibilidad</th>
+                <th>Clases</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                {% if row[4] in ["sabatino 3:00", "Sabado 3:00", "sábado 3:00"] %}
+                    <td class="name-column">{{ row[0] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[3] }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock content %}
