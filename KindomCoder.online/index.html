@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingdom Coder - Entrenamiento y Certificación Profesional</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cursor Follower -->
+    <div class="cursor-follower"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mesa%20de%20trabajo%201-AtVVidnAsqiGc9iBKCH4TLqLVkXTKH.png" alt="Kingdom Coder Logo" height="50">
+                <span class="ms-2">Kingdom Coder</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programas">Programas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificaciones">Certificaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-3" href="#registro">Registrarse</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="200">
+                    <h1 class="hero-title">Eleva tu <span class="highlight">carrera digital</span> al siguiente nivel</h1>
+                    <p class="hero-subtitle">Formación especializada y certificaciones reconocidas para Programadores, Community Managers y Traductores.</p>
+                    <div class="hero-buttons">
+                        <a href="#programas" class="btn btn-primary btn-lg">Explorar Programas</a>
+                        <a href="#registro" class="btn btn-outline-light btn-lg">Comenzar Ahora</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-number">5k+</div>
+                            <div class="hero-stat-label">Graduados</div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-number">25+</div>
+                            <div class="hero-stat-label">Certificaciones</div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-number">4.9</div>
+                            <div class="hero-stat-label">Calificación</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image" data-aos="fade-left" data-aos-delay="400">
+                    <div class="hero-image-container">
+                        <img src="/placeholder.svg?height=600&width=600" alt="Estudiantes aprendiendo" class="img-fluid main-image">
+                        <div class="floating-card card-1">
+                            <div class="icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="content">
+                                <div class="title">Programación</div>
+                                <div class="subtitle">20+ cursos</div>
+                            </div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="content">
+                                <div class="title">Community Management</div>
+                                <div class="subtitle">15+ cursos</div>
+                            </div>
+                        </div>
+                        <div class="floating-card card-3">
+                            <div class="icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="content">
+                                <div class="title">Traducción</div>
+                                <div class="subtitle">10+ cursos</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands-section">
+        <div class="container">
+            <p class="text-center mb-4">EMPRESAS QUE CONFÍAN EN NUESTROS GRADUADOS</p>
+            <div class="brands-slider">
+                <div class="brand-item">
+                    <img src="/placeholder.svg?height=50&width=150" alt="Brand" class="img-fluid">
+                </div>
+                <div class="brand-item">
+                    <img src="/placeholder.svg?height=50&width=150" alt="Brand" class="img-fluid">
+                </div>
+                <div class="brand-item">
+                    <img src="/placeholder.svg?height=50&width=150" alt="Brand" class="img-fluid">
+                </div>
+                <div class="brand-item">
+                    <img src="/placeholder.svg?height=50&width=150" alt="Brand" class="img-fluid">
+                </div>
+                <div class="brand-item">
+                    <img src="/placeholder.svg?height=50&width=150" alt="Brand" class="img-fluid">
+                </div>
+                <div class="brand-item">
+                    <img src="/placeholder.svg?height=50&width=150" alt="Brand" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programas" class="programs-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h6 class="section-pre-title">NUESTROS PROGRAMAS</h6>
+                <h2 class="section-title">Rutas de aprendizaje <span class="highlight">especializadas</span></h2>
+                <p class="section-subtitle">Diseñadas para desarrollar todas las habilidades que necesitas en el mundo digital</p>
+            </div>
+            <div class="row g-4">
+                <!-- Programación -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-card">
+                        <div class="program-card-inner">
+                            <div class="program-card-front">
+                                <div class="program-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3>Programación</h3>
+                                <p>Conviértete en un desarrollador profesional dominando las tecnologías más demandadas del mercado.</p>
+                                <span class="flip-card-btn">Ver más <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                            <div class="program-card-back">
+                                <ul class="program-features">
+                                    <li><i class="fas fa-check-circle"></i> Desarrollo Web Full Stack</li>
+                                    <li><i class="fas fa-check-circle"></i> Desarrollo Móvil</li>
+                                    <li><i class="fas fa-check-circle"></i> Inteligencia Artificial</li>
+                                    <li><i class="fas fa-check-circle"></i> DevOps y Cloud</li>
+                                    <li><i class="fas fa-check-circle"></i> Arquitectura de Software</li>
+                                </ul>
+                                <a href="#" class="btn btn-light">Explorar programa</a>
+                                <span class="flip-card-btn-back">Volver <i class="fas fa-arrow-left"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Community Manager -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-card">
+                        <div class="program-card-inner">
+                            <div class="program-card-front">
+                                <div class="program-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h3>Community Manager</h3>
+                                <p>Aprende a gestionar comunidades online y desarrollar estrategias efectivas de comunicación digital.</p>
+                                <span class="flip-card-btn">Ver más <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                            <div class="program-card-back">
+                                <ul class="program-features">
+                                    <li><i class="fas fa-check-circle"></i> Gestión de Redes Sociales</li>
+                                    <li><i class="fas fa-check-circle"></i> Marketing de Contenidos</li>
+                                    <li><i class="fas fa-check-circle"></i> Analítica Digital</li>
+                                    <li><i class="fas fa-check-circle"></i> Estrategia de Marca</li>
+                                    <li><i class="fas fa-check-circle"></i> Gestión de Crisis</li>
+                                </ul>
+                                <a href="#" class="btn btn-light">Explorar programa</a>
+                                <span class="flip-card-btn-back">Volver <i class="fas fa-arrow-left"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Traducción -->
+                <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="program-card">
+                        <div class="program-card-inner">
+                            <div class="program-card-front">
+                                <div class="program-icon">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <h3>Traducción</h3>
+                                <p>Perfecciona tus habilidades lingüísticas y conviértete en un traductor profesional certificado.</p>
+                                <span class="flip-card-btn">Ver más <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                            <div class="program-card-back">
+                                <ul class="program-features">
+                                    <li><i class="fas fa-check-circle"></i> Traducción Técnica</li>
+                                    <li><i class="fas fa-check-circle"></i> Localización de Software</li>
+                                    <li><i class="fas fa-check-circle"></i> Interpretación</li>
+                                    <li><i class="fas fa-check-circle"></i> Herramientas CAT</li>
+                                    <li><i class="fas fa-check-circle"></i> Post-edición de MT</li>
+                                </ul>
+                                <a href="#" class="btn btn-light">Explorar programa</a>
+                                <span class="flip-card-btn-back">Volver <i class="fas fa-arrow-left"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="features-image">
+                        <img src="/placeholder.svg?height=600&width=550" alt="Aprendizaje flexible" class="img-fluid rounded-4">
+                        <div class="feature-badge badge-1">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Aprendizaje práctico</span>
+                        </div>
+                        <div class="feature-badge badge-2">
+                            <i class="fas fa-clock"></i>
+                            <span>Horario flexible</span>
+                        </div>
+                        <div class="feature-badge badge-3">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificación global</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="section-header">
+                        <h6 class="section-pre-title">POR QUÉ ELEGIRNOS</h6>
+                        <h2 class="section-title">Una experiencia de <span class="highlight">aprendizaje única</span></h2>
+                        <p class="section-subtitle">Nos enfocamos en lo que realmente necesitas para destacar en el mercado laboral digital.</p>
+                    </div>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Instructores expertos</h4>
+                                <p>Aprende de profesionales con experiencia real en la industria y reconocimiento internacional.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Proyectos reales</h4>
+                                <p>Construye un portafolio profesional con proyectos basados en escenarios del mundo real.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Comunidad activa</h4>
+                                <p>Conecta con estudiantes y profesionales para ampliar tu red de contactos y oportunidades.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Apoyo de carrera</h4>
+                                <p>Recibe asesoramiento personalizado para encontrar las mejores oportunidades laborales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section id="certificaciones" class="certification-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h6 class="section-pre-title">CERTIFICACIONES</h6>
+                <h2 class="section-title">Certificaciones <span class="highlight">reconocidas globalmente</span></h2>
+                <p class="section-subtitle">Avaladas por las principales empresas del sector tecnológico</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="certification-tabs">
+                        <div class="nav-wrapper">
+                            <ul class="nav nav-pills nav-fill" id="certificationTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="programming-tab" data-bs-toggle="tab" data-bs-target="#programming" type="button" role="tab" aria-controls="programming" aria-selected="true">
+                                        <i class="fas fa-code"></i>
+                                        <span>Programación</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="community-tab" data-bs-toggle="tab" data-bs-target="#community" type="button" role="tab" aria-controls="community" aria-selected="false">
+                                        <i class="fas fa-comments"></i>
+                                        <span>Community</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="translation-tab" data-bs-toggle="tab" data-bs-target="#translation" type="button" role="tab" aria-controls="translation" aria-selected="false">
+                                        <i class="fas fa-language"></i>
+                                        <span>Traducción</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="certificationTabContent">
+                            <div class="tab-pane fade show active" id="programming" role="tabpanel" aria-labelledby="programming-tab">
+                                <div class="cert-content">
+                                    <div class="cert-image">
+                                        <img src="/placeholder.svg?height=300&width=300" alt="Certificado de Programación" class="img-fluid">
+                                    </div>
+                                    <div class="cert-details">
+                                        <h4>Desarrollador Full Stack Certificado</h4>
+                                        <p>Nuestra certificación más completa que valida tus habilidades en desarrollo frontend, backend, bases de datos y despliegue.</p>
+                                        <ul class="cert-list">
+                                            <li><i class="fas fa-check-circle"></i> Reconocida internacionalmente</li>
+                                            <li><i class="fas fa-check-circle"></i> Proyectos prácticos evaluados</li>
+                                            <li><i class="fas fa-check-circle"></i> Sin fecha de expiración</li>
+                                            <li><i class="fas fa-check-circle"></i> Incluye insignia digital verificable</li>
+                                        </ul>
+                                        <a href="#" class="btn btn-primary">Ver detalles</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="community" role="tabpanel" aria-labelledby="community-tab">
+                                <div class="cert-content">
+                                    <div class="cert-image">
+                                        <img src="/placeholder.svg?height=300&width=300" alt="Certificado de Community Manager" class="img-fluid">
+                                    </div>
+                                    <div class="cert-details">
+                                        <h4>Community Manager Profesional Certificado</h4>
+                                        <p>Certifica tus habilidades en la gestión de comunidades digitales, estrategia de contenidos y análisis de datos.</p>
+                                        <ul class="cert-list">
+                                            <li><i class="fas fa-check-circle"></i> Reconocida por agencias digitales</li>
+                                            <li><i class="fas fa-check-circle"></i> Casos prácticos evaluados</li>
+                                            <li><i class="fas fa-check-circle"></i> Actualización bianual</li>
+                                            <li><i class="fas fa-check-circle"></i> Incluye insignia digital verificable</li>
+                                        </ul>
+                                        <a href="#" class="btn btn-primary">Ver detalles</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="translation" role="tabpanel" aria-labelledby="translation-tab">
+                                <div class="cert-content">
+                                    <div class="cert-image">
+                                        <img src="/placeholder.svg?height=300&width=300" alt="Certificado de Traducción" class="img-fluid">
+                                    </div>
+                                    <div class="cert-details">
+                                        <h4>Traductor Técnico Certificado</h4>
+                                        <p>Valida tus competencias lingüísticas y habilidades técnicas para traducción especializada y localización.</p>
+                                        <ul class="cert-list">
+                                            <li><i class="fas fa-check-circle"></i> Reconocida por empresas de localización</li>
+                                            <li><i class="fas fa-check-circle"></i> Pruebas prácticas de traducción</li>
+                                            <li><i class="fas fa-check-circle"></i> Válida por 5 años</li>
+                                            <li><i class="fas fa-check-circle"></i> Incluye insignia digital verificable</li>
+                                        </ul>
+                                        <a href="#" class="btn btn-primary">Ver detalles</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="certification-image">
+                        <img src="/placeholder.svg?height=550&width=550" alt="Certificaciones Profesionales" class="img-fluid rounded-4">
+                        <div class="certification-stats">
+                            <div class="certification-stat-item">
+                                <div class="number">92%</div>
+                                <div class="label">de graduados empleados</div>
+                            </div>
+                            <div class="certification-stat-item">
+                                <div class="number">45%</div>
+                                <div class="label">de aumento salarial promedio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="testimonials-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h6 class="section-pre-title">TESTIMONIOS</h6>
+                <h2 class="section-title">Lo que dicen nuestros <span class="highlight">estudiantes</span></h2>
+                <p class="section-subtitle">Historias reales de éxito después de completar nuestros programas</p>
+            </div>
+            <div class="testimonials-slider" data-aos="fade-up" data-aos-delay="200">
+                <div class="row">
+                    <!-- Testimonial 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-header">
+                                <div class="testimonial-image">
+                                    <img src="/placeholder.svg?height=80&width=80" alt="Estudiante" class="img-fluid">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Carlos Rodríguez</h4>
+                                    <p>Desarrollador Full Stack</p>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"La certificación de Desarrollador Full Stack revolucionó mi carrera. En solo 6 meses pasé de trabajar como freelancer a ser contratado por una empresa internacional con un salario que duplicó mis ingresos. Lo recomiendo sin dudar."</p>
+                            </div>
+                            <div class="testimonial-company">
+                                <img src="/placeholder.svg?height=30&width=100" alt="Logo empresa" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-header">
+                                <div class="testimonial-image">
+                                    <img src="/placeholder.svg?height=80&width=80" alt="Estudiante" class="img-fluid">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Laura Martínez</h4>
+                                    <p>Community Manager</p>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"El programa de Community Manager me dio exactamente las herramientas que necesitaba para destacar en el mercado. Ahora gestiono las redes sociales de grandes marcas como freelance, con clientes de todo el mundo y total libertad."</p>
+                            </div>
+                            <div class="testimonial-company">
+                                <img src="/placeholder.svg?height=30&width=100" alt="Logo empresa" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-header">
+                                <div class="testimonial-image">
+                                    <img src="/placeholder.svg?height=80&width=80" alt="Estudiante" class="img-fluid">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Miguel Sánchez</h4>
+                                    <p>Traductor Técnico</p>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"La certificación en Traducción Técnica me abrió las puertas a proyectos internacionales que antes ni siquiera consideraba. Los conocimientos y habilidades que adquirí son exactamente lo que las empresas de tecnología buscan hoy."</p>
+                            </div>
+                            <div class="testimonial-company">
+                                <img src="/placeholder.svg?height=30&width=100" alt="Logo empresa" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonial-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card" data-aos="zoom-in">
+                <div class="cta-content">
+                    <h2>¿Listo para transformar tu carrera?</h2>
+                    <p>Únete a más de 5,000 profesionales que ya han dado el siguiente paso en su desarrollo profesional</p>
+                    <a href="#registro" class="btn btn-light btn-lg">Comenzar ahora</a>
+                </div>
+                <div class="cta-pattern"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registro" class="registration-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="section-header">
+                        <h6 class="section-pre-title">REGÍSTRATE AHORA</h6>
+                        <h2 class="section-title">Comienza tu camino hacia el <span class="highlight">éxito profesional</span></h2>
+                        <p class="section-subtitle">Al registrarte hoy, recibirás acceso gratuito a un módulo introductorio del programa de tu elección</p>
+                    </div>
+                    <div class="registration-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Acceso inmediato</h4>
+                                <p>Comienza a aprender hoy mismo con acceso instantáneo a contenido exclusivo</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Asesoramiento personalizado</h4>
+                                <p>Sesión gratuita con un asesor académico para diseñar tu plan de estudio</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-tags"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Descuento especial</h4>
+                                <p>20% de descuento en tu primer curso o certificación</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="registration-form-card">
+                        <div class="form-header">
+                            <h3>Regístrate y obtén acceso gratuito</h3>
+                        </div>
+                        <form id="registrationForm">
+                            <div class="mb-4">
+                                <label for="name" class="form-label">Nombre completo</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <input type="text" class="form-control" id="name" placeholder="Escribe tu nombre completo" required>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" class="form-control" id="email" placeholder="Escribe tu correo electrónico" required>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Escribe tu número de teléfono">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="program" class="form-label">Programa de interés</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-laptop-code"></i></span>
+                                    <select class="form-select" id="program" required>
+                                        <option value="" selected disabled>Selecciona un programa</option>
+                                        <option value="programming">Programación</option>
+                                        <option value="community">Community Manager</option>
+                                        <option value="translation">Traducción</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-4 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">Acepto los términos y condiciones y la política de privacidad</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Registrarme ahora</button>
+                        </form>
+                        <div class="form-note text-center mt-4">
+                            <p>¿Ya tienes una cuenta? <a href="#">Inicia sesión aquí</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h6 class="section-pre-title">CONTACTO</h6>
+                <h2 class="section-title">¿Tienes <span class="highlight">preguntas</span>? Estamos aquí para ayudarte</h2>
+                <p class="section-subtitle">Nuestro equipo está disponible para responder todas tus consultas</p>
+            </div>
+            <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-5">
+                    <div class="contact-info-card">
+                        <div class="contact-header">
+                            <h3>Información de contacto</h3>
+                            <p>Comunícate con nosotros a través de cualquiera de estos canales</p>
+                        </div>
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="content">
+                                    <h5>Dirección</h5>
+                                    <p>Av. Tecnológica 123, Ciudad Digital, CP 28013</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="content">
+                                    <h5>Teléfono</h5>
+                                    <p>+1 234 567 890</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <h5>Email</h5>
+                                    <p>info@kingdomcoder.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="content">
+                                    <h5>Horario</h5>
+                                    <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-social">
+                            <h5>Síguenos</h5>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form-card">
+                        <div class="form-header">
+                            <h3>Envíanos un mensaje</h3>
+                            <p>Completa el formulario y te responderemos a la brevedad</p>
+                        </div>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <label for="contactName" class="form-label">Nombre</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        <input type="text" class="form-control" id="contactName" placeholder="Tu nombre" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label for="contactEmail" class="form-label">Email</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                        <input type="email" class="form-control" id="contactEmail" placeholder="Tu email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contactSubject" class="form-label">Asunto</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                                    <input type="text" class="form-control" id="contactSubject" placeholder="Asunto de tu mensaje" required>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contactMessage" class="form-label">Mensaje</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-comment"></i></span>
+                                    <textarea class="form-control" id="contactMessage" rows="6" placeholder="Escribe tu mensaje aquí" required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-about">
+                            <a href="#" class="footer-logo">
+                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mesa%20de%20trabajo%201-AtVVidnAsqiGc9iBKCH4TLqLVkXTKH.png" alt="Kingdom Coder Logo" height="60">
+                                <span>Kingdom Coder</span>
+                            </a>
+                            <p>Transformando vidas a través de la educación y certificación profesional en tecnología y comunicación digital.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5>Explorar</h5>
+                            <ul>
+                                <li><a href="#home">Inicio</a></li>
+                                <li><a href="#programas">Programas</a></li>
+                                <li><a href="#certificaciones">Certificaciones</a></li>
+                                <li><a href="#testimonios">Testimonios</a></li>
+                                <li><a href="#contacto">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5>Programas</h5>
+                            <ul>
+                                <li><a href="#">Programación</a></li>
+                                <li><a href="#">Community Manager</a></li>
+                                <li><a href="#">Traducción</a></li>
+                                <li><a href="#">Cursos Especializados</a></li>
+                                <li><a href="#">Bootcamps</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-newsletter">
+                            <h5>Suscríbete a nuestro boletín</h5>
+                            <p>Recibe las últimas noticias sobre tecnología, cursos y promociones</p>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Tu email" required>
+                                    <button class="btn btn-primary" type="submit">Suscribirse</button>
+                                </div>
+                            </form>
+                            <div class="newsletter-note">
+                                <p>Al suscribirte, aceptas recibir emails de Kingdom Coder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Kingdom Coder. Todos los derechos reservados.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="footer-bottom-links">
+                            <li><a href="#">Términos y Condiciones</a></li>
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

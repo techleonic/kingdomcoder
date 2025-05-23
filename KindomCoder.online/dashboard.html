@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Kingdom Coder</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+    <!-- Cursor Follower -->
+    <div class="cursor-follower"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mesa%20de%20trabajo%201-AtVVidnAsqiGc9iBKCH4TLqLVkXTKH.png" alt="Kingdom Coder Logo" height="50">
+                <span class="ms-2">Kingdom Coder</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.html">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mis-cursos">
+                            <i class="fas fa-book"></i> Mis Cursos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificaciones">
+                            <i class="fas fa-certificate"></i> Certificaciones
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#comunidad">
+                            <i class="fas fa-users"></i> Comunidad
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end notification-dropdown" aria-labelledby="notificationsDropdown">
+                            <li class="dropdown-header">Notificaciones</li>
+                            <li><a class="dropdown-item" href="#">
+                                <div class="notification-item">
+                                    <div class="notification-icon course-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">Nuevo módulo disponible</p>
+                                        <p class="notification-text">Se ha añadido el módulo "React Avanzado"</p>
+                                        <p class="notification-time">Hace 2 horas</p>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <div class="notification-item">
+                                    <div class="notification-icon message-icon">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">Nuevo mensaje</p>
+                                        <p class="notification-text">Carlos ha respondido a tu pregunta</p>
+                                        <p class="notification-time">Hace 5 horas</p>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <div class="notification-item">
+                                    <div class="notification-icon event-icon">
+                                        <i class="fas fa-calendar"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">Evento próximo</p>
+                                        <p class="notification-text">Webinar: Tendencias en desarrollo web</p>
+                                        <p class="notification-time">Mañana, 18:00</p>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-center" href="#">Ver todas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle user-dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="/placeholder.svg?height=40&width=40" alt="Foto de perfil" class="user-avatar">
+                            <span class="d-none d-lg-inline-block ms-2">Carlos Rodríguez</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Configuración</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle me-2"></i> Ayuda</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt me-2"></i> Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <h5>Navegación</h5>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item active">
+                    <a href="dashboard.html" class="sidebar-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="fas fa-book"></i>
+                        <span>Mis Cursos</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certificaciones</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="fas fa-calendar"></i>
+                        <span>Calendario</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="fas fa-users"></i>
+                        <span>Comunidad</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="fas fa-comment"></i>
+                        <span>Mensajes</span>
+                        <span class="badge bg-primary">5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Guardados</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Configuración</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h5>¿Necesitas ayuda?</h5>
+                    <p>Nuestro equipo está disponible 24/7</p>
+                    <a href="#" class="btn btn-sm btn-light">Contactar Soporte</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6" data-aos="fade-right">
+                            <h1 class="welcome-title">¡Bienvenido de vuelta, Carlos!</h1>
+                            <p class="welcome-subtitle">Continúa tu camino de aprendizaje. Has completado el <span class="highlight">65%</span> de tu ruta actual.</p>
+                            
+                            <!-- Global Progress -->
+                            <div class="global-progress">
+                                <div class="progress-info">
+                                    <span>Progreso general</span>
+                                    <span>65%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Stats Cards -->
+                            <div class="stats-cards">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3>42h</h3>
+                                        <p>Tiempo de estudio</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3>12</h3>
+                                        <p>Logros obtenidos</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-tasks"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3>8</h3>
+                                        <p>Proyectos completados</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-none d-lg-block" data-aos="fade-left">
+                            <div class="welcome-image">
+                                <img src="/placeholder.svg?height=400&width=500" alt="Dashboard illustration" class="img-fluid">
+                                <div class="floating-badge badge-1">
+                                    <div class="badge-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="badge-content">
+                                        <span>¡Nuevo logro desbloqueado!</span>
+                                    </div>
+                                </div>
+                                <div class="floating-badge badge-2">
+                                    <div class="badge-icon">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="badge-content">
+                                        <span>¡5 días de racha!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="container-fluid">
+                    <div class="search-container" data-aos="fade-up">
+                        <h2>Encuentra tu próximo curso</h2>
+                        <div class="search-box">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="form-control" placeholder="Buscar cursos, certificaciones, instructores...">
+                            <button class="btn btn-primary">Buscar</button>
+                        </div>
+                        <div class="search-tags">
+                            <span>Populares:</span>
+                            <a href="#" class="search-tag">JavaScript</a>
+                            <a href="#" class="search-tag">React</a>
+                            <a href="#" class="search-tag">UX/UI</a>
+                            <a href="#" class="search-tag">Python</a>
+                            <a href="#" class="search-tag">Marketing Digital</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Continue Learning Section -->
+            <section class="continue-learning-section">
+                <div class="container-fluid">
+                    <div class="section-header d-flex justify-content-between align-items-center" data-aos="fade-up">
+                        <div>
+                            <h6 class="section-pre-title">CONTINÚA APRENDIENDO</h6>
+                            <h2 class="section-title">Tus cursos <span class="highlight">en progreso</span></h2>
+                        </div>
+                        <a href="#" class="btn btn-outline-primary">Ver todos</a>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- Course 1 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="course-progress-card">
+                                <div class="course-image">
+                                    <img src="/placeholder.svg?height=200&width=300" alt="Curso de JavaScript" class="img-fluid">
+                                    <div class="course-category programming">
+                                        <i class="fas fa-code"></i> Programación
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <h3>JavaScript Avanzado: Patrones de Diseño</h3>
+                                    <div class="course-meta">
+                                        <span><i class="fas fa-user"></i> Instructor: Alex Martínez</span>
+                                        <span><i class="fas fa-clock"></i> 12h restantes</span>
+                                    </div>
+                                    <div class="progress-info">
+                                        <span>Progreso</span>
+                                        <span>65%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="course-footer">
+                                        <span class="next-lesson">
+                                            <i class="fas fa-play-circle"></i> Próxima lección: Patrón Observer
+                                        </span>
+                                        <a href="#" class="btn btn-primary">Continuar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Course 2 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="course-progress-card">
+                                <div class="course-image">
+                                    <img src="/placeholder.svg?height=200&width=300" alt="Curso de Community Management" class="img-fluid">
+                                    <div class="course-category community">
+                                        <i class="fas fa-comments"></i> Community
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <h3>Estrategias de Engagement en Redes Sociales</h3>
+                                    <div class="course-meta">
+                                        <span><i class="fas fa-user"></i> Instructor: Laura Gómez</span>
+                                        <span><i class="fas fa-clock"></i> 8h restantes</span>
+                                    </div>
+                                    <div class="progress-info">
+                                        <span>Progreso</span>
+                                        <span>42%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="course-footer">
+                                        <span class="next-lesson">
+                                            <i class="fas fa-play-circle"></i> Próxima lección: Análisis de audiencia
+                                        </span>
+                                        <a href="#" class="btn btn-primary">Continuar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommended Courses Section -->
+            <section class="recommended-courses-section">
+                <div class="container-fluid">
+                    <div class="section-header" data-aos="fade-up">
+                        <h6 class="section-pre-title">RECOMENDADOS PARA TI</h6>
+                        <h2 class="section-title">Cursos que podrían <span class="highlight">interesarte</span></h2>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- Recommended Course 1 -->
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="/placeholder.svg?height=200&width=300" alt="Curso de React" class="img-fluid">
+                                    <div class="course-category programming">
+                                        <i class="fas fa-code"></i> Programación
+                                    </div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i> 4.9
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <h3>React: Construyendo Aplicaciones Modernas</h3>
+                                    <div class="course-meta">
+                                        <span><i class="fas fa-user"></i> Miguel Sánchez</span>
+                                        <span><i class="fas fa-clock"></i> 24 horas</span>
+                                    </div>
+                                    <p>Aprende a construir aplicaciones web modernas con React, Redux y las últimas tecnologías frontend.</p>
+                                    <div class="course-footer">
+                                        <div class="course-price">$49.99</div>
+                                        <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Recommended Course 2 -->
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="/placeholder.svg?height=200&width=300" alt="Curso de Marketing Digital" class="img-fluid">
+                                    <div class="course-category community">
+                                        <i class="fas fa-comments"></i> Community
+                                    </div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i> 4.8
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <h3>Marketing Digital: Estrategias Avanzadas</h3>
+                                    <div class="course-meta">
+                                        <span><i class="fas fa-user"></i> Ana Martínez</span>
+                                        <span><i class="fas fa-clock"></i> 18 horas</span>
+                                    </div>
+                                    <p>Domina las estrategias avanzadas de marketing digital para aumentar la visibilidad y conversión de tu marca.</p>
+                                    <div class="course-footer">
+                                        <div class="course-price">$39.99</div>
+                                        <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Recommended Course 3 -->
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="/placeholder.svg?height=200&width=300" alt="Curso de Traducción Técnica" class="img-fluid">
+                                    <div class="course-category translation">
+                                        <i class="fas fa-language"></i> Traducción
+                                    </div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i> 4.7
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <h3>Traducción Técnica para Software y Tecnología</h3>
+                                    <div class="course-meta">
+                                        <span><i class="fas fa-user"></i> Carlos Vega</span>
+                                        <span><i class="fas fa-clock"></i> 20 horas</span>
+                                    </div>
+                                    <p>Especialízate en la traducción de documentación técnica, interfaces de usuario y contenido relacionado con software.</p>
+                                    <div class="course-footer">
+                                        <div class="course-price">$44.99</div>
+                                        <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- All Courses Section -->
+            <section id="mis-cursos" class="all-courses-section">
+                <div class="container-fluid">
+                    <div class="section-header" data-aos="fade-up">
+                        <h6 class="section-pre-title">EXPLORA NUESTRO CATÁLOGO</h6>
+                        <h2 class="section-title">Todos los <span class="highlight">cursos</span></h2>
+                    </div>
+                    
+                    <!-- Course Categories Tabs -->
+                    <div class="course-categories" data-aos="fade-up">
+                        <ul class="nav nav-pills mb-4" id="coursesTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-courses" type="button" role="tab" aria-controls="all-courses" aria-selected="true">
+                                    Todos
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="programming-tab" data-bs-toggle="tab" data-bs-target="#programming-courses" type="button" role="tab" aria-controls="programming-courses" aria-selected="false">
+                                    <i class="fas fa-code"></i> Programación
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="community-tab" data-bs-toggle="tab" data-bs-target="#community-courses" type="button" role="tab" aria-controls="community-courses" aria-selected="false">
+                                    <i class="fas fa-comments"></i> Community
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="translation-tab" data-bs-toggle="tab" data-bs-target="#translation-courses" type="button" role="tab" aria-controls="translation-courses" aria-selected="false">
+                                    <i class="fas fa-language"></i> Traducción
+                                </button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="coursesTabContent">
+                            <!-- All Courses Tab -->
+                            <div class="tab-pane fade show active" id="all-courses" role="tabpanel" aria-labelledby="all-tab">
+                                <div class="row g-4">
+                                    <!-- Course 1 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de HTML y CSS" class="img-fluid">
+                                                <div class="course-category programming">
+                                                    <i class="fas fa-code"></i> Programación
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.9
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>HTML y CSS: Fundamentos del Desarrollo Web</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Laura Pérez</span>
+                                                    <span><i class="fas fa-clock"></i> 16 horas</span>
+                                                </div>
+                                                <p>Aprende los fundamentos del desarrollo web con HTML5 y CSS3 desde cero.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$29.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Course 2 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de JavaScript" class="img-fluid">
+                                                <div class="course-category programming">
+                                                    <i class="fas fa-code"></i> Programación
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.8
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>JavaScript: De Principiante a Experto</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Carlos Ruiz</span>
+                                                    <span><i class="fas fa-clock"></i> 30 horas</span>
+                                                </div>
+                                                <p>Domina JavaScript desde los conceptos básicos hasta técnicas avanzadas.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$49.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Course 3 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de Redes Sociales" class="img-fluid">
+                                                <div class="course-category community">
+                                                    <i class="fas fa-comments"></i> Community
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.7
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>Gestión Efectiva de Redes Sociales</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> María González</span>
+                                                    <span><i class="fas fa-clock"></i> 20 horas</span>
+                                                </div>
+                                                <p>Aprende a gestionar redes sociales de manera profesional y efectiva.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$39.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Course 4 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de Traducción" class="img-fluid">
+                                                <div class="course-category translation">
+                                                    <i class="fas fa-language"></i> Traducción
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.6
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>Introducción a la Traducción Profesional</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Ana Sánchez</span>
+                                                    <span><i class="fas fa-clock"></i> 18 horas</span>
+                                                </div>
+                                                <p>Fundamentos de la traducción profesional y técnicas esenciales.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$34.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Course 5 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de Python" class="img-fluid">
+                                                <div class="course-category programming">
+                                                    <i class="fas fa-code"></i> Programación
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.9
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>Python para Ciencia de Datos</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Roberto Méndez</span>
+                                                    <span><i class="fas fa-clock"></i> 25 horas</span>
+                                                </div>
+                                                <p>Aprende a utilizar Python para análisis de datos, visualización y machine learning.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$54.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Course 6 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de Marketing de Contenidos" class="img-fluid">
+                                                <div class="course-category community">
+                                                    <i class="fas fa-comments"></i> Community
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.8
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>Marketing de Contenidos para Redes Sociales</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Elena Torres</span>
+                                                    <span><i class="fas fa-clock"></i> 22 horas</span>
+                                                </div>
+                                                <p>Estrategias efectivas para crear contenido que conecte con tu audiencia.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$44.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Pagination -->
+                                <div class="courses-pagination">
+                                    <nav aria-label="Navegación de cursos">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            
+                            <!-- Programming Courses Tab -->
+                            <div class="tab-pane fade" id="programming-courses" role="tabpanel" aria-labelledby="programming-tab">
+                                <div class="row g-4">
+                                    <!-- Programming Course 1 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de HTML y CSS" class="img-fluid">
+                                                <div class="course-category programming">
+                                                    <i class="fas fa-code"></i> Programación
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.9
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>HTML y CSS: Fundamentos del Desarrollo Web</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Laura Pérez</span>
+                                                    <span><i class="fas fa-clock"></i> 16 horas</span>
+                                                </div>
+                                                <p>Aprende los fundamentos del desarrollo web con HTML5 y CSS3 desde cero.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$29.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Programming Course 2 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de JavaScript" class="img-fluid">
+                                                <div class="course-category programming">
+                                                    <i class="fas fa-code"></i> Programación
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.8
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>JavaScript: De Principiante a Experto</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Carlos Ruiz</span>
+                                                    <span><i class="fas fa-clock"></i> 30 horas</span>
+                                                </div>
+                                                <p>Domina JavaScript desde los conceptos básicos hasta técnicas avanzadas.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$49.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Programming Course 3 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de Python" class="img-fluid">
+                                                <div class="course-category programming">
+                                                    <i class="fas fa-code"></i> Programación
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.9
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>Python para Ciencia de Datos</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Roberto Méndez</span>
+                                                    <span><i class="fas fa-clock"></i> 25 horas</span>
+                                                </div>
+                                                <p>Aprende a utilizar Python para análisis de datos, visualización y machine learning.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$54.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Community Courses Tab -->
+                            <div class="tab-pane fade" id="community-courses" role="tabpanel" aria-labelledby="community-tab">
+                                <div class="row g-4">
+                                    <!-- Community Course 1 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de Redes Sociales" class="img-fluid">
+                                                <div class="course-category community">
+                                                    <i class="fas fa-comments"></i> Community
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.7
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>Gestión Efectiva de Redes Sociales</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> María González</span>
+                                                    <span><i class="fas fa-clock"></i> 20 horas</span>
+                                                </div>
+                                                <p>Aprende a gestionar redes sociales de manera profesional y efectiva.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$39.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Community Course 2 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de Marketing de Contenidos" class="img-fluid">
+                                                <div class="course-category community">
+                                                    <i class="fas fa-comments"></i> Community
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.8
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>Marketing de Contenidos para Redes Sociales</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Elena Torres</span>
+                                                    <span><i class="fas fa-clock"></i> 22 horas</span>
+                                                </div>
+                                                <p>Estrategias efectivas para crear contenido que conecte con tu audiencia.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$44.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Translation Courses Tab -->
+                            <div class="tab-pane fade" id="translation-courses" role="tabpanel" aria-labelledby="translation-tab">
+                                <div class="row g-4">
+                                    <!-- Translation Course 1 -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="course-card">
+                                            <div class="course-image">
+                                                <img src="/placeholder.svg?height=200&width=300" alt="Curso de Traducción" class="img-fluid">
+                                                <div class="course-category translation">
+                                                    <i class="fas fa-language"></i> Traducción
+                                                </div>
+                                                <div class="course-rating">
+                                                    <i class="fas fa-star"></i> 4.6
+                                                </div>
+                                            </div>
+                                            <div class="course-content">
+                                                <h3>Introducción a la Traducción Profesional</h3>
+                                                <div class="course-meta">
+                                                    <span><i class="fas fa-user"></i> Ana Sánchez</span>
+                                                    <span><i class="fas fa-clock"></i> 18 horas</span>
+                                                </div>
+                                                <p>Fundamentos de la traducción profesional y técnicas esenciales.</p>
+                                                <div class="course-footer">
+                                                    <div class="course-price">$34.99</div>
+                                                    <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upcoming Events Section -->
+            <section class="upcoming-events-section">
+                <div class="container-fluid">
+                    <div class="section-header" data-aos="fade-up">
+                        <h6 class="section-pre-title">EVENTOS</h6>
+                        <h2 class="section-title">Próximos <span class="highlight">eventos</span></h2>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- Event 1 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <div class="date-day">15</div>
+                                    <div class="date-month">JUN</div>
+                                </div>
+                                <div class="event-content">
+                                    <div class="event-tag">Webinar</div>
+                                    <h3>Tendencias en Desarrollo Web 2025</h3>
+                                    <div class="event-meta">
+                                        <span><i class="fas fa-clock"></i> 18:00 - 19:30</span>
+                                        <span><i class="fas fa-user"></i> Miguel Sánchez</span>
+                                    </div>
+                                    <p>Descubre las últimas tendencias y tecnologías que definirán el desarrollo web en 2025.</p>
+                                    <a href="#" class="btn btn-outline-primary">Inscribirme</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Event 2 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <div class="date-day">22</div>
+                                    <div class="date-month">JUN</div>
+                                </div>
+                                <div class="event-content">
+                                    <div class="event-tag">Workshop</div>
+                                    <h3>Estrategias de Engagement en Instagram</h3>
+                                    <div class="event-meta">
+                                        <span><i class="fas fa-clock"></i> 16:00 - 18:00</span>
+                                        <span><i class="fas fa-user"></i> Laura Gómez</span>
+                                    </div>
+                                    <p>Workshop práctico sobre cómo aumentar el engagement en Instagram para marcas y negocios.</p>
+                                    <a href="#" class="btn btn-outline-primary">Inscribirme</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer dashboard-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Kingdom Coder. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="footer-links">
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
