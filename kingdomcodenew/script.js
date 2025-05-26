@@ -1,5 +1,5 @@
 // Kingdom Coder JavaScript Functions
-/*
+
 // Global variables
 let currentUser = null
 const assessmentData = {
@@ -543,4 +543,3 @@ const additionalCSS = `
 const styleSheet = document.createElement("style")
 styleSheet.textContent = additionalCSS
 document.head.appendChild(styleSheet)
-*/
