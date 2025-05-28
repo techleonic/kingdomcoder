@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingdom Coder - Portal de Estudiantes</title>
+    
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-aos="fade-right">
+    <div class="brand-container">
+        <img src="/images/kingdom-coder-blue.png" alt="Kingdom Coder" class="brand-logo">
+        <div class="brand-text">
+            <span class="brand-name">Kingdom</span>
+            <span class="brand-subtitle">Coder</span>
+        </div>
+    </div>
+</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs">Programas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                    
+                    <!-- Auth Buttons -->
+                    <li class="nav-item ms-2" id="authButtons">
+                        <button class="btn btn-outline-primary me-2 modern-btn" data-bs-toggle="modal" data-bs-target="#signinModal">
+                            <i class="fas fa-sign-in-alt me-1"></i>
+                            Iniciar Sesión
+                        </button>
+                        <button class="btn btn-primary modern-btn" data-bs-toggle="modal" data-bs-target="#signupModal">
+                            <i class="fas fa-user-plus me-1"></i>
+                            Registrarse
+                        </button>
+                    </li>
+                    
+                    <!-- User Menu -->
+                    <li class="nav-item dropdown d-none" id="userMenu">
+                        <a class="nav-link dropdown-toggle user-menu" href="#" role="button" data-bs-toggle="dropdown">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span id="userName">Usuario</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end modern-dropdown">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-book me-2"></i>Mis Cursos</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-certificate me-2"></i>Certificados</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+    <h1 class="hero-title">
+        Domina el <span class="gradient-text">Reino</span> 
+        <br>del <span class="gradient-text">Código</span>
+    </h1>
+    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+        Únete a una comunidad de desarrolladores que combinan excelencia técnica con valores cristianos. 
+        Aprende las tecnologías más demandadas mientras fortaleces tu fe y propósito.
+    </p>
+    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+        <button class="btn btn-primary btn-lg modern-btn me-3" data-bs-toggle="modal" data-bs-target="#signupModal">
+            <i class="fas fa-cross me-2"></i>
+            Comenzar Mi Llamado
+        </button>
+        <button class="btn btn-outline-light btn-lg modern-btn">
+            <i class="fas fa-play me-2"></i>
+            Ver Testimonios
+        </button>
+    </div>
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
+        <div class="stat-item">
+            <div class="stat-number">2,500+</div>
+            <div class="stat-label">Estudiantes</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Empleabilidad</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Empresas Partner</div>
+        </div>
+    </div>
+</div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="floating-elements">
+                            <div class="floating-card" style="animation-delay: 0s;">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="floating-card" style="animation-delay: 0.5s;">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="floating-card" style="animation-delay: 1s;">
+                                <i class="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="floating-card" style="animation-delay: 1.5s;">
+                                <i class="fab fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <img src="/placeholder.svg?height=500&width=500" alt="Coding Illustration" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="section-title">Nuestros <span class="gradient-text">Programas</span></h2>
+                <p class="section-subtitle">Elige el camino perfecto para tu carrera en tecnología</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="program-title">Full Stack Development</h3>
+                        <p class="program-description">
+                            Domina tanto el frontend como el backend. Aprende React, Node.js, y bases de datos.
+                        </p>
+                        <div class="program-features">
+                            <div class="feature"><i class="fas fa-check"></i> 12 meses de duración</div>
+                            <div class="feature"><i class="fas fa-check"></i> Proyectos reales</div>
+                            <div class="feature"><i class="fas fa-check"></i> Mentorías 1-a-1</div>
+                        </div>
+                        <div class="program-price">
+                            <span class="price">$299</span>
+                            <span class="period">/mes</span>
+                        </div>
+                        <button class="btn btn-primary w-100 modern-btn">
+                            <i class="fas fa-arrow-right me-2"></i>
+                            Ver Detalles
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-card featured">
+                        <div class="featured-badge">Más Popular</div>
+                        <div class="program-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="program-title">Mobile Development</h3>
+                        <p class="program-description">
+                            Crea aplicaciones nativas y multiplataforma con React Native y Flutter.
+                        </p>
+                        <div class="program-features">
+                            <div class="feature"><i class="fas fa-check"></i> 10 meses de duración</div>
+                            <div class="feature"><i class="fas fa-check"></i> Apps en tiendas</div>
+                            <div class="feature"><i class="fas fa-check"></i> Portfolio garantizado</div>
+                        </div>
+                        <div class="program-price">
+                            <span class="price">$249</span>
+                            <span class="period">/mes</span>
+                        </div>
+                        <button class="btn btn-primary w-100 modern-btn">
+                            <i class="fas fa-arrow-right me-2"></i>
+                            Ver Detalles
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="program-title">Data Science</h3>
+                        <p class="program-description">
+                            Analiza datos y crea modelos de machine learning con Python y R.
+                        </p>
+                        <div class="program-features">
+                            <div class="feature"><i class="fas fa-check"></i> 14 meses de duración</div>
+                            <div class="feature"><i class="fas fa-check"></i> Proyectos con empresas</div>
+                            <div class="feature"><i class="fas fa-check"></i> Certificación oficial</div>
+                        </div>
+                        <div class="program-price">
+                            <span class="price">$349</span>
+                            <span class="period">/mes</span>
+                        </div>
+                        <button class="btn btn-primary w-100 modern-btn">
+                            <i class="fas fa-arrow-right me-2"></i>
+                            Ver Detalles
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-image">
+                        <img src="/placeholder.svg?height=400&width=500" alt="About Us" class="img-fluid rounded-4">
+                        <div class="about-badge">
+                            <i class="fas fa-award"></i>
+                            <span>5 años de experiencia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-content">
+    <h2 class="section-title">Por qué elegir <span class="gradient-text">Kingdom Coder</span></h2>
+    <p class="about-description">
+        Somos más que una escuela de programación. Somos una comunidad de desarrolladores cristianos 
+        que creen en el poder transformador de la tecnología guiada por principios bíblicos y valores eternos.
+    </p>
+    
+    <div class="about-features">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-pray"></i>
+            </div>
+            <div class="feature-content">
+                <h4>Formación Integral</h4>
+                <p>Desarrollamos no solo habilidades técnicas, sino también carácter cristiano y liderazgo.</p>
+            </div>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="feature-content">
+                <h4>Mentores Cristianos</h4>
+                <p>Aprende de desarrolladores senior que integran fe y tecnología en su carrera profesional.</p>
+            </div>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="feature-content">
+                <h4>Propósito Eterno</h4>
+                <p>Usa tus habilidades tecnológicas para impactar el Reino de Dios y transformar vidas.</p>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="section-title">¿Listo para <span class="gradient-text">comenzar</span>?</h2>
+                <p class="section-subtitle">Contáctanos y da el primer paso hacia tu nueva carrera</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form-container" data-aos="fade-up" data-aos-delay="200">
+                        <form id="contactForm" class="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control modern-input" id="contactName" placeholder="Tu nombre">
+                                        <label for="contactName">Nombre completo</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control modern-input" id="contactEmail" placeholder="tu@email.com">
+                                        <label for="contactEmail">Correo electrónico</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control modern-input" id="contactSubject" placeholder="Asunto">
+                                        <label for="contactSubject">Asunto</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control modern-input" id="contactMessage" placeholder="Tu mensaje" style="height: 120px"></textarea>
+                                        <label for="contactMessage">Mensaje</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg modern-btn">
+                                        <i class="fas fa-paper-plane me-2"></i>
+                                        Enviar Mensaje
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+    <div class="brand-container">
+        <img src="/images/kingdom-coder-white.png" alt="Kingdom Coder" class="brand-logo">
+        <div class="brand-text">
+            <span class="brand-name">Kingdom</span>
+            <span class="brand-subtitle">Coder</span>
+        </div>
+    </div>
+    <p class="footer-description">
+        Transformando vidas a través de la educación en tecnología con valores cristianos.
+    </p>
+    <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+    </div>
+</div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5 class="footer-title">Programas</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">Full Stack</a></li>
+                                <li><a href="#">Mobile Development</a></li>
+                                <li><a href="#">Data Science</a></li>
+                                <li><a href="#">UI/UX Design</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 class="footer-title">Empresa</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">Nosotros</a></li>
+                                <li><a href="#">Equipo</a></li>
+                                <li><a href="#">Carreras</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 class="footer-title">Soporte</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">Centro de Ayuda</a></li>
+                                <li><a href="#">Contacto</a></li>
+                                <li><a href="#">Términos</a></li>
+                                <li><a href="#">Privacidad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="footer-copyright">
+                        © 2024 Kingdom Coder. Todos los derechos reservados.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="footer-made">
+                        Hecho con <i class="fas fa-heart text-danger"></i> para desarrolladores
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modern-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signinForm">
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input type="email" class="form-control modern-input" id="signinEmail" placeholder="tu@email.com" required>
+                                <label for="signinEmail">Correo electrónico</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input type="password" class="form-control modern-input" id="signinPassword" placeholder="Contraseña" required>
+                                <label for="signinPassword">Contraseña</label>
+                                <button type="button" class="password-toggle" id="toggleSigninPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">
+                                        Recordarme
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6 text-end">
+                                <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" data-bs-dismiss="modal">
+                                    ¿Olvidaste tu contraseña?
+                                </a>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 modern-btn">
+                            <i class="fas fa-sign-in-alt me-2"></i>
+                            Iniciar Sesión
+                        </button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Regístrate aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modern-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Crear Cuenta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control modern-input" id="signupFirstName" placeholder="Nombre" required>
+                                    <label for="signupFirstName">Nombre</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control modern-input" id="signupLastName" placeholder="Apellido" required>
+                                    <label for="signupLastName">Apellido</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control modern-input" id="signupEmail" placeholder="tu@email.com" required>
+                                    <label for="signupEmail">Correo electrónico</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control modern-input" id="signupPhone" placeholder="Teléfono">
+                                    <label for="signupPhone">Teléfono</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control modern-input" id="signupPassword" placeholder="Contraseña" required>
+                                    <label for="signupPassword">Contraseña</label>
+                                    <button type="button" class="password-toggle" id="toggleSignupPassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div id="passwordStrength" class="form-text">La contraseña debe tener al menos 8 caracteres</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control modern-input" id="signupConfirmPassword" placeholder="Confirmar contraseña" required>
+                                    <label for="signupConfirmPassword">Confirmar contraseña</label>
+                                </div>
+                                <div id="passwordMatch" class="form-text"></div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <select class="form-select modern-input" id="signupProgram" required>
+                                        <option value="">Selecciona un programa</option>
+                                        <option value="fullstack">Full Stack Development</option>
+                                        <option value="mobile">Mobile Development</option>
+                                        <option value="datascience">Data Science</option>
+                                        <option value="uiux">UI/UX Design</option>
+                                    </select>
+                                    <label for="signupProgram">Programa de interés</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="signupTerms" required>
+                                    <label class="form-check-label" for="signupTerms">
+                                        Acepto los <a href="#" class="text-decoration-none">términos y condiciones</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="signupNewsletter">
+                                    <label class="form-check-label" for="signupNewsletter">
+                                        Quiero recibir noticias y actualizaciones por email
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 modern-btn">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    Crear Cuenta
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>¿Ya tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#signinModal" data-bs-dismiss="modal">Inicia sesión aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modern-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Recuperar Contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4">Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
+                    <form id="forgotPasswordForm">
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input type="email" class="form-control modern-input" id="forgotEmail" placeholder="tu@email.com" required>
+                                <label for="forgotEmail">Correo electrónico</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 modern-btn">
+                            <i class="fas fa-paper-plane me-2"></i>
+                            Enviar Enlace
+                        </button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#signinModal" data-bs-dismiss="modal">Volver al inicio de sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
