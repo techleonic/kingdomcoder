@@ -1,25 +1,29 @@
 /* Modern CSS Variables & Reset */
 :root {
-  /* Color Palette - Kingdom Coder Theme (Extracted from Logo) */
-  --primary-gradient: linear-gradient(135deg, #2d4f5c 0%, #1e3540 100%);
-  --secondary-gradient: linear-gradient(135deg, #3a5f6d 0%, #2d4f5c 100%);
-  --success-gradient: linear-gradient(135deg, #4a7080 0%, #2d4f5c 100%);
-  --dark-gradient: linear-gradient(135deg, #1e3540 0%, #0f1a1f 100%);
+  /* Color Palette - Kingdom Coder Theme (White & Dark Blues) */
+  --primary-gradient: linear-gradient(135deg, #23475f 0%, #1a3547 100%);
+  --secondary-gradient: linear-gradient(135deg, #2d5a73 0%, #23475f 100%);
+  --success-gradient: linear-gradient(135deg, #3a6b87 0%, #23475f 100%);
+  --dark-gradient: linear-gradient(135deg, #1a3547 0%, #0f1f2a 100%);
 
-  --primary-color: #2d4f5c;
-  --secondary-color: #1e3540;
-  --accent-color: #3a5f6d;
-  --text-primary: #1e3540;
-  --text-secondary: #2d4f5c;
-  --text-muted: #5a7580;
+  --primary-color: #23475f;
+  --secondary-color: #1a3547;
+  --accent-color: #2d5a73;
+  --light-blue: #3a6b87;
+  --text-primary: #1a3547;
+  --text-secondary: #23475f;
+  --text-muted: #6b8a9a;
+  --text-light: #ffffff;
   --bg-primary: #ffffff;
-  --bg-secondary: #f7f9fa;
-  --bg-dark: #0f1a1f;
-  --border-color: #d0dde2;
-  --shadow-sm: 0 1px 3px rgba(45, 79, 92, 0.1);
-  --shadow-md: 0 4px 12px rgba(45, 79, 92, 0.1);
-  --shadow-lg: 0 10px 30px rgba(45, 79, 92, 0.1);
-  --shadow-xl: 0 20px 50px rgba(45, 79, 92, 0.15);
+  --bg-secondary: #f8fafb;
+  --bg-dark: #0f1f2a;
+  --bg-navy: #1a3547;
+  --border-color: #e1ecf0;
+  --border-dark: #2d5a73;
+  --shadow-sm: 0 1px 3px rgba(35, 71, 95, 0.1);
+  --shadow-md: 0 4px 12px rgba(35, 71, 95, 0.1);
+  --shadow-lg: 0 10px 30px rgba(35, 71, 95, 0.1);
+  --shadow-xl: 0 20px 50px rgba(35, 71, 95, 0.15);
 
   /* Typography */
   --font-primary: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -111,7 +115,7 @@ html {
 .custom-navbar {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--border-color);
   padding: 1rem 0;
   transition: var(--transition);
   z-index: 1000;
@@ -170,7 +174,7 @@ html {
 
 .navbar-nav .nav-link:hover {
   color: var(--primary-color);
-  background: rgba(45, 79, 92, 0.1);
+  background: rgba(35, 71, 95, 0.1);
 }
 
 .navbar-nav .nav-link::after {
@@ -230,7 +234,7 @@ html {
 .btn-primary.modern-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-  background: var(--primary-gradient);
+  background: var(--secondary-gradient);
 }
 
 .btn-outline-primary.modern-btn {
@@ -277,7 +281,7 @@ html {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #2d4f5c 0%, #1e3540 100%);
+  background: var(--primary-gradient);
   position: relative;
   overflow: hidden;
   color: white;
@@ -290,7 +294,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(58, 95, 109, 0.3) 0%, transparent 50%),
+  background: radial-gradient(circle at 20% 80%, rgba(45, 90, 115, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   z-index: 1;
 }
@@ -309,6 +313,7 @@ html {
   font-weight: 800;
   margin-bottom: 1.5rem;
   line-height: 1.1;
+  color: white;
 }
 
 .hero-subtitle {
@@ -317,6 +322,7 @@ html {
   margin-bottom: 2.5rem;
   opacity: 0.9;
   max-width: 600px;
+  color: white;
 }
 
 .hero-buttons {
@@ -345,6 +351,7 @@ html {
   font-size: 0.9rem;
   opacity: 0.8;
   font-weight: 500;
+  color: white;
 }
 
 /* Hero Visual */
@@ -481,6 +488,7 @@ html {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
 .section-subtitle {
@@ -506,11 +514,13 @@ html {
 .program-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
 }
 
 .program-card.featured {
   border: 2px solid var(--primary-color);
   transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(35, 71, 95, 0.02) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
 .program-card.featured:hover {
@@ -583,7 +593,7 @@ html {
 .price {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--primary-color);
 }
 
 .period {
@@ -602,6 +612,7 @@ html {
 
 .about-image img {
   box-shadow: var(--shadow-lg);
+  border-radius: var(--border-radius-lg);
 }
 
 .about-badge {
@@ -668,6 +679,10 @@ html {
 }
 
 /* Contact Section */
+.contact-section {
+  background: white;
+}
+
 .contact-form-container {
   background: white;
   border-radius: var(--border-radius-lg);
@@ -688,7 +703,7 @@ html {
 
 .modern-input:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.2rem rgba(45, 79, 92, 0.15);
+  box-shadow: 0 0 0 0.2rem rgba(35, 71, 95, 0.15);
   outline: none;
 }
 
@@ -729,6 +744,7 @@ html {
 
 .modern-modal .modal-header {
   padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .modern-modal .modal-title {
@@ -757,7 +773,7 @@ html {
 }
 
 .modern-dropdown .dropdown-item:hover {
-  background: rgba(45, 79, 92, 0.1);
+  background: rgba(35, 71, 95, 0.1);
   color: var(--primary-color);
 }
 
@@ -971,13 +987,7 @@ html {
 .modern-btn:focus,
 .modern-input:focus {
   outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(45, 79, 92, 0.25);
-}
-
-.modern-input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.2rem rgba(45, 79, 92, 0.15);
-  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(35, 71, 95, 0.25);
 }
 
 /* Success/Error States */
@@ -1010,7 +1020,28 @@ html {
   animation-delay: 0.5s;
 }
 
-/* Footer brand logo */
-.footer .brand-logo {
-  filter: brightness(0) invert(1);
+/* Additional Dark Blue Accents */
+.navbar-toggler {
+  border-color: var(--primary-color);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2835, 71, 95, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Enhanced White Backgrounds */
+.programs-section {
+  background: white;
+}
+
+.contact-section {
+  background: var(--bg-secondary);
+}
+
+/* Price highlighting */
+.program-price .price {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
